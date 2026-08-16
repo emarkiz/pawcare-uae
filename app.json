@@ -1,0 +1,84 @@
+{
+  "expo": {
+    "name": "Pawcare",
+    "slug": "pawcare",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "scheme": "pawcare",
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "ae.pawcare.app",
+      "infoPlist": {
+        "CFBundleDisplayName": "Pawcare",
+        "NSLocationWhenInUseUsageDescription": "Pawcare uses your location to find nearby PawPros and track dog walks.",
+        "NSLocationAlwaysAndWhenInUseUsageDescription": "Pawcare uses your location for live GPS walk tracking.",
+        "NSCameraUsageDescription": "Pawcare uses your camera to upload pet photos and profile pictures.",
+        "NSPhotoLibraryUsageDescription": "Pawcare uses your photo library to upload pet photos.",
+        "ITSAppUsesNonExemptEncryption": false
+      }
+    },
+    "android": {
+      "package": "ae.pawcare.app",
+      "adaptiveIcon": {
+        "backgroundColor": "#2D6A4F",
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "backgroundImage": "./assets/android-icon-background.png",
+        "monochromeImage": "./assets/android-icon-monochrome.png"
+      },
+      "predictiveBackGestureEnabled": false,
+      "permissions": [
+        "android.permission.ACCESS_COARSE_LOCATION",
+        "android.permission.ACCESS_FINE_LOCATION",
+        "android.permission.CAMERA",
+        "android.permission.READ_EXTERNAL_STORAGE",
+        "android.permission.WRITE_EXTERNAL_STORAGE",
+        "android.permission.RECORD_AUDIO"
+      ]
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      "expo-secure-store",
+      "expo-font",
+      "expo-web-browser",
+      "expo-splash-screen",
+      "expo-apple-authentication",
+      [
+        "expo-location",
+        {
+          "locationAlwaysAndWhenInUsePermission": "Allow Pawcare to use your location for live GPS walk tracking."
+        }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "Allow Pawcare to access your photos to upload pet pictures.",
+          "cameraPermission": "Allow Pawcare to use your camera to take pet photos."
+        }
+      ],
+      [
+        "expo-notifications",
+        {
+          "icon": "./assets/icon.png",
+          "color": "#2D6A4F"
+        }
+      ],
+      [
+        "@stripe/stripe-react-native",
+        {
+          "merchantIdentifier": "merchant.ae.pawcare.app",
+          "enableGooglePay": true
+        }
+      ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "0319c8d9-71e4-4ade-a106-b9fc98ec7ac3"
+      }
+    },
+    "owner": "pawcare.noon"
+  }
+}
